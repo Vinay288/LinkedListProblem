@@ -86,6 +86,7 @@ public class MyLinkedList<K> {
 		INode currentNode = head;
 		while (currentNode != previousNode && currentNode != null) {
 			currentNode = currentNode.getNext();
+			
 		}
 		if (currentNode == previousNode) {
 			newNode.setNext(currentNode.getNext());
