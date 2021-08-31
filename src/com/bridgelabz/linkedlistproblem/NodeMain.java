@@ -11,7 +11,7 @@ public class NodeMain {
 		myLinkedList.append(firstNode);
 		myLinkedList.append(secondNode);
 		myLinkedList.append(thirdNode);
-		myLinkedList.popFirst();
+		myLinkedList.popLast();
 		myLinkedList.printMyNodes();
 	}
 

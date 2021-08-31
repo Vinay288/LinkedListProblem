@@ -49,10 +49,23 @@ public class MyLinkedList {
 			tempNode = tempNode.getNext();
 		}
 	}
+
 	public void popFirst() {
 		INode deletedNode = head;
 		head = head.getNext();
-		System.out.println("deleted "+deletedNode.getKey());
-		deletedNode=null;
+		System.out.println("deleted " + deletedNode.getKey());
+		deletedNode = null;
+	}
+
+	public void popLast() {
+		INode previousNode = null, currentNode = head;
+		while (currentNode.getNext() != null) {
+			previousNode = currentNode;
+			currentNode = currentNode.getNext();
 		}
+		previousNode.setNext(null);
+		tail = previousNode;
+		System.out.println("deleted " + currentNode.getKey());
+		currentNode = null;
+	}
 }
