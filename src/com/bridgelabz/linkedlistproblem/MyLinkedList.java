@@ -73,12 +73,40 @@ public class MyLinkedList<K> {
 		int index = 1;
 		INode currentNode = head;
 		while (currentNode != null) {
-			if (currentNode.getKey()==key) {
+			if (currentNode.getKey() == key) {
 				System.out.println("key found at index " + index);
 				break;
 			}
 			currentNode = currentNode.getNext();
 			index++;
+		}
+	}
+
+	public void insertAfter(INode previousNode, INode newNode) {
+		INode currentNode = head;
+		while (currentNode != previousNode && currentNode != null) {
+			currentNode = currentNode.getNext();
+		}
+		if (currentNode == previousNode) {
+			newNode.setNext(currentNode.getNext());
+			currentNode.setNext(newNode);
+		}
+	}
+	public void delete(K key) {
+		INode currentNode = head,previousNode=null;
+		while(currentNode!=null) {
+			if(currentNode.getKey().equals(key)) {
+				if(currentNode.getNext()==null) {
+					previousNode.setNext(null);
+				}
+				else
+				previousNode.setNext(currentNode.getNext());
+				currentNode=null;
+				System.out.println(key+" deleted");
+				break;
+			}
+			previousNode=currentNode;
+			currentNode=currentNode.getNext();
 		}
 	}
 }
