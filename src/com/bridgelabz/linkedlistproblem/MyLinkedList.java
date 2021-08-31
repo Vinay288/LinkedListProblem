@@ -26,4 +26,14 @@ public class MyLinkedList {
 		}
 		System.out.print("null");
 	}
+	
+	public void append(INode newNode) {
+		if(tail==null)
+			this.tail=newNode;
+		if(head==null)
+			this.head=newNode;
+		else
+			tail.setNext(newNode);
+			tail=newNode;
+	}
 }
