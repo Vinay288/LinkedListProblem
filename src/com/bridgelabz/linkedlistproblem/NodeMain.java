@@ -7,10 +7,13 @@ public class NodeMain {
 		Node<Integer> firstNode = new Node(56);
 		Node<Integer> secondNode = new Node(30);
 		Node<Integer> thirdNode = new Node(70);
-		firstNode.next = secondNode;
-		secondNode.next = thirdNode;
+		MyLinkedList myLinkedList= new MyLinkedList();
+		myLinkedList.add(firstNode);
+		myLinkedList.add(secondNode);
+		myLinkedList.add(thirdNode);
+		myLinkedList.printMyNodes();
 		
-		System.out.println(firstNode.key+"->"+firstNode.next.key+"->"+firstNode.next.next.key);
+
 
 	}
 
