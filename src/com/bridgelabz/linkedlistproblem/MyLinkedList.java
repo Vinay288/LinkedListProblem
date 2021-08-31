@@ -36,4 +36,14 @@ public class MyLinkedList {
 			tail.setNext(newNode);
 			tail=newNode;
 	}
+	public void insertNodeBetween(INode beforeNode,INode newNode,INode afterNode) {
+		INode tempNode = head;
+		while(tempNode.getNext()!=null) {
+			if(tempNode==beforeNode && tempNode.getNext()==afterNode) {
+				newNode.setNext(tempNode.getNext());
+				beforeNode.setNext(newNode);
+			}
+			tempNode=tempNode.getNext();
+		}
+	}
 }
