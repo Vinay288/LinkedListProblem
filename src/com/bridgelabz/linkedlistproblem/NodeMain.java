@@ -9,8 +9,9 @@ public class NodeMain {
 		Node<Integer> thirdNode = new Node(70);
 		MyLinkedList myLinkedList = new MyLinkedList();
 		myLinkedList.append(firstNode);
+		myLinkedList.append(secondNode);
 		myLinkedList.append(thirdNode);
-		myLinkedList.insertNodeBetween(firstNode, secondNode, thirdNode);
+		myLinkedList.popFirst();
 		myLinkedList.printMyNodes();
 	}
 
