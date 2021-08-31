@@ -1,7 +1,7 @@
 package com.bridgelabz.linkedlistproblem;
 
-public class MyLinkedList {
-
+public class MyLinkedList<K> {
+	private K key;
 	private INode head;
 	private INode tail;
 
@@ -67,5 +67,18 @@ public class MyLinkedList {
 		tail = previousNode;
 		System.out.println("deleted " + currentNode.getKey());
 		currentNode = null;
+	}
+
+	public void find(K key) {
+		int index = 1;
+		INode currentNode = head;
+		while (currentNode != null) {
+			if (currentNode.getKey()==key) {
+				System.out.println("key found at index " + index);
+				break;
+			}
+			currentNode = currentNode.getNext();
+			index++;
+		}
 	}
 }

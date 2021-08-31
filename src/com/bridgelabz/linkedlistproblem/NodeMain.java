@@ -11,8 +11,7 @@ public class NodeMain {
 		myLinkedList.append(firstNode);
 		myLinkedList.append(secondNode);
 		myLinkedList.append(thirdNode);
-		myLinkedList.popLast();
-		myLinkedList.printMyNodes();
+		myLinkedList.find(30);
 	}
 
 }
