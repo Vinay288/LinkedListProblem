@@ -16,7 +16,7 @@ public void sort() {
         return;
     }
     else {
-        while (current != null) {
+        while (current.getNext() != null) {
             index = current.getNext();
 
             while (index != null) {
@@ -33,7 +33,6 @@ public void sort() {
     }
 }
 public void append(INode<K> newNode) {
-	sort();
 	if (tail == null)
 		this.tail = newNode;
 	if (head == null)
@@ -41,6 +40,7 @@ public void append(INode<K> newNode) {
 	else
 		tail.setNext(newNode);
 	tail = newNode;
+ sort();
 }
 public void printMyNodes() {
 	INode tempNode = head;
